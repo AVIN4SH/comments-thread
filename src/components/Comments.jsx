@@ -48,7 +48,7 @@ const commentsData = [
   },
 ];
 
-function CommentItem({ comment, depth = 0 }) {
+function CommentItem({ comment }) {
   return (
     <div className={`border-l border-gray-400 pl-2`}>
       <div className="flex items-start gap-2 py-2">
@@ -79,7 +79,7 @@ function CommentItem({ comment, depth = 0 }) {
       {comment.replies && (
         <div className="mt-1 ml-5">
           {comment.replies.map((reply) => (
-            <CommentItem key={reply.id} comment={reply} depth={depth + 1} />
+            <CommentItem key={reply.id} comment={reply} />
           ))}
         </div>
       )}
